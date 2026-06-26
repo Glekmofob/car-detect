@@ -1,0 +1,7 @@
+video:
+  source : "colorfulExample.mp4"
+
+
+model:
+  weights: "yolov8n.pt"
+  confThreshold: 0.25

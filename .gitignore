@@ -1,5 +1,5 @@
 venv/ 
-pycache/
+__pycache__/
 *.pt
 detect.py
 *.mp4

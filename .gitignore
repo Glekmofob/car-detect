@@ -3,3 +3,9 @@ __pycache__/
 *.pt
 detect.py
 *.mp4
+prepareDataset.py
+clear_data.py
+modeltest.ipynb
+test.py
+runs/
+infraRed_cars_personsv2/

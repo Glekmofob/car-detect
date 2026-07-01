@@ -1,0 +1,5 @@
+train: C:\Work\InfraredCarDetection\infraRed_cars_personsv2\images\train
+val: C:\Work\InfraredCarDetection\infraRed_cars_personsv2\images\val
+test: C:\Work\InfraredCarDetection\infraRed_cars_personsv2\images\test
+nc: 2
+names: ['car','person']

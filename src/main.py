@@ -15,6 +15,16 @@ cv2.namedWindow("Result", cv2.WINDOW_NORMAL)
 
 capture = GetVideo(videoSource)
 
+# frame_width = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
+# frame_height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
+# fps = int(capture.get(cv2.CAP_PROP_FPS))
+
+# if fps == 0: 
+#     fps = 25 
+
+# fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+# output_video = cv2.VideoWriter('output_result.mp4', fourcc, fps, (frame_width, frame_height))
+
 
 while True:
     success, frame = capture.read()
@@ -23,7 +33,7 @@ while True:
         print("Видева Кончилось")
         break
 
-    results = model.predict(frame, conf = confThresh, classes = [0, 2], verbose = False)
+    results = model.predict(frame, conf = confThresh, verbose = False)
     coords = []
     boxes = results[0].boxes
     for box in boxes:
@@ -49,9 +59,10 @@ while True:
 
 
 
-    
+    # output_video.write(frame)
     cv2.imshow("Result", frame) # можно по идее просто пихнуть results[0].plot(), но практика кастомизации ╰(▔∀▔)╯ 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 capture.release()
+    # output_video.release() 
 cv2.destroyAllWindows()

@@ -1,7 +1,8 @@
 video:
-  source : "colorfulExample.mp4"
+  source : "IR_vid.mp4"
 
 
 model:
-  weights: "yolov8n.pt"
+  weights: "best.pt"
   confThreshold: 0.25
+  
